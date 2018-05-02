@@ -4,7 +4,7 @@ import sys
 
 import numpy as np
 
-from cStringIO import StringIO
+from io import BytesIO
 from PIL import Image, ImageDraw
 
 
@@ -19,7 +19,7 @@ def get_screenshot(driver, width=160, height=210):
         PIL Image object
     """
     png_data = driver.get_screenshot_as_png()
-    pil_image = Image.open(StringIO(png_data))
+    pil_image = Image.open(BytesIO(png_data))
     pil_image = pil_image.crop(
             (0, 0, width, height)).convert('RGB')
     return pil_image
@@ -79,8 +79,8 @@ def create_gif(path_prefix):
 
 if __name__ == '__main__':
     if len(sys.argv) != 2:
-        print 'Usage: {} PATH_PREFIX'.format(sys.argv[0])
-        print '  where PATH_PREFIX is something like '\
-                'data/experiments/123_unnamed/traces/test/2000-img/2000-3'
+        print('Usage: {} PATH_PREFIX'.format(sys.argv[0]))
+        print('  where PATH_PREFIX is something like '\
+                'data/experiments/123_unnamed/traces/test/2000-img/2000-3')
         exit(1)
     create_gif(sys.argv[1])

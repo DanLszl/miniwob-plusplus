@@ -5,9 +5,8 @@ import logging
 from selenium.webdriver.common.action_chains import ActionChains
 
 
-class MiniWoBAction(object):
+class MiniWoBAction(object, metaclass=abc.ABCMeta):
     """Defines an action in its __call__ method."""
-    __metaclass__ = abc.ABCMeta
 
     @abc.abstractmethod
     def __call__(self, driver):

@@ -51,6 +51,8 @@ var genProblem = function() {
     var e = elements[i];
     if(e.html() === correct_text) {
       e.on('click', function(){ core.endEpisode(1.0, true); })
+      var x = e.node();
+      WOB_SOLUTION = x.getBoundingClientRect();
     } else {
       e.on('click', function(){ core.endEpisode(-1.0); })
     }

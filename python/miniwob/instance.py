@@ -323,6 +323,7 @@ class MiniWoBInstance(Thread):
                 '"env_reward": WOB_REWARD_GLOBAL,'
                 '"raw_reward": WOB_RAW_REWARD_GLOBAL,'
                 '"reason": WOB_REWARD_REASON,'
+                '"solution": WOB_SOLUTION,'
                 '};')
 
     def visualize_attention(self, attention):

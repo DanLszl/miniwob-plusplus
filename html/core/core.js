@@ -47,6 +47,7 @@ var WOB_REWARD_REASON = null; // reason for the reward
 var WOB_DONE_GLOBAL = false; // a done indicator
 var WOB_EPISODE_ID = 0; // number of episodes done so far
 var WOB_TASK_READY = true; // override this to show that the task is not ready yet
+var WOB_SOLUTION = null; // bounding rectangle of the solution
 core.EPISODE_MAX_TIME = 10000; // in ms. Set default time to 10s.
 
 // https://stackoverflow.com/questions/3169786/clear-text-selection-with-javascript
